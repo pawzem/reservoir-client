@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { OrganizationComponent } from './organization/organization.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes = [
   { path: '', component: OrganizationComponent },
@@ -20,7 +21,8 @@ const routes = [
     RouterModule.forRoot(routes, {
       useHash: false,
       enableTracing: false // for Debugging of the Routes
-    })
+    }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
