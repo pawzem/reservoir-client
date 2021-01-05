@@ -1,0 +1,8 @@
+<div class="header card-header">
+  <ul ngbNav [activeId]="route.fragment | async" class="nav justify-content-start">
+    <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+      <a ngbNavLink routerLink="." [fragment]="link.fragment">{{ link.title }}</a>
+    </li>
+  </ul>
+</div>
+

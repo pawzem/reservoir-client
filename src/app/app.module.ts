@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes = [
   { path: '', component: OrganizationComponent },
@@ -14,7 +16,9 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    OrganizationComponent
+    OrganizationComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

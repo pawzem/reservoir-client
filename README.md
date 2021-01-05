@@ -42,3 +42,8 @@ plain example with description:
 `<h1 i18n="An introduction header for this sample">Hello i18n!</h1>`
 `<h1 i18n="site header|An introduction header for this sample">Hello i18n!</h1>`
 
+
+## bootsrtap
+components:
+https://ng-bootstrap.github.io/#/components/accordion/examples
+
