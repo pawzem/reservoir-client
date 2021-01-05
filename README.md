@@ -29,3 +29,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Localization
+https://angular.io/guide/i18n
+
+i18n is a custom attribute, recognized by Angular tools and compilers. After translation, the compiler removes it. It is not an Angular directive.
+
+plain example:
+`1 i18n>Hello i18n!</h1>`
+
+plain example with description:
+`<h1 i18n="An introduction header for this sample">Hello i18n!</h1>`
+`<h1 i18n="site header|An introduction header for this sample">Hello i18n!</h1>`
+
