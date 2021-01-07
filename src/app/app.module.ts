@@ -7,6 +7,7 @@ import { OrganizationComponent } from './organization/organization.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes = [
   { path: '', component: OrganizationComponent },
@@ -22,6 +23,7 @@ const routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes, {
       useHash: false,
       enableTracing: false // for Debugging of the Routes

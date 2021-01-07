@@ -1,1 +1,23 @@
 <p i18n>organization works!</p>
+
+<div class="row">
+  <div class="col-md-9">
+    <div class="row">
+
+      <div class="product-info col-md-4" *ngFor="let organization of organizations">
+
+        <div class="card bg-light p-1 m-1">
+
+          <div i18n class="card-title"><strong>{{ organization.displayName}}</strong></div>
+<!--          <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>-->
+          <div i18n class="card-text"><strong>Phone number</strong>: {{ organization.phoneNumber }}</div>
+          <div i18n class="card-text"><strong>Email</strong>: {{ organization.email }}</div>
+          <div i18n class="card-link"><strong>Website</strong>: {{ organization.website }}</div>
+
+<!--          <button id="buyButton" class="btn btn-success" (click)="addProduct(p)">Buy</button>-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
