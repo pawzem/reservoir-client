@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
+import { OrganizationCreationComponent } from './organization-creation/organization-creation.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes = [
   { path: '', component: OrganizationComponent },
@@ -19,7 +21,8 @@ const routes = [
     AppComponent,
     OrganizationComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    OrganizationCreationComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ const routes = [
       useHash: false,
       enableTracing: false // for Debugging of the Routes
     }),
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

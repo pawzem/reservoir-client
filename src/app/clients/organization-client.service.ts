@@ -12,28 +12,15 @@ import {environment} from "../../environments/environment";
 export class OrganizationClientService {
 
 
-  // public organizations: Organization[] = [];
 
   constructor(private http: HttpClient) { }
-
-  // loadOrganizations(): Observable<boolean> {
-  //     return this.http.get<Organization[]>('api/v1/organization')
-  //       .pipe(
-  //         map((data: any[]) => {
-  //           this.organizations = data;
-  //           return true;
-  //         }));
-  //   }
-
   getOrganizations(): Observable<Organization[]> {
     return this.http.get<Organization[]>(environment.baseUrl + 'organization');
   }
 
   public addFirm(firm: Organization): Observable<PartyId>  {
 
-    return this.http.post<PartyId>('organization', firm, {
-      headers: new HttpHeaders({  })
-    });
+    return this.http.post<PartyId>(environment.baseUrl + 'organization', firm);
   }
 
 
