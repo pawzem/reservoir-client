@@ -31,3 +31,15 @@ export class Branch {
     this.website = website;
   }
 }
+
+export class Workstation {
+  organizationUnitId: string;
+  workstationId: string;
+  displayName: string;
+
+  constructor(organizationUnitId: string, workstationId: string, displayName: string) {
+    this.organizationUnitId = organizationUnitId;
+    this.workstationId = workstationId;
+    this.displayName = displayName;
+  }
+}

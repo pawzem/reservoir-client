@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Branch} from '../clients/organization';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {OrganizationClientService} from '../clients/organization-client.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {BranchCreationComponent} from '../branch-creation/branch-creation.component';
 
 @Component({
@@ -16,6 +16,7 @@ export class BranchComponent implements OnInit {
   private companyId: string;
 
   constructor(private modalService: NgbModal,
+              private router: Router,
               private route: ActivatedRoute,
               private organizationClient: OrganizationClientService) { }
 
@@ -33,6 +34,10 @@ export class BranchComponent implements OnInit {
   openBranchCreation(): void {
     const modalRef = this.modalService.open(BranchCreationComponent);
     modalRef.componentInstance.companyId = this.companyId;
+  }
+
+  public navigateToWorkstations(branchId: string): Promise<boolean>{
+    return this.router.navigate(['branches/' + branchId + '/workstations']);
   }
 
 }

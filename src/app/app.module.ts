@@ -12,6 +12,7 @@ import { OrganizationCreationComponent } from './organization-creation/organizat
 import {ReactiveFormsModule} from '@angular/forms';
 import { BranchComponent } from './branch/branch.component';
 import { BranchCreationComponent } from './branch-creation/branch-creation.component';
+import { WorkstationComponent } from './workstation/workstation.component';
 
 const routes = [
   { path: '',
@@ -19,6 +20,9 @@ const routes = [
   },
   { path: 'organizations/:companyId/branches',
     component: BranchComponent,
+  },
+  { path: 'branches/:branchId/workstations',
+    component: WorkstationComponent,
   },
 
 ];
@@ -31,7 +35,8 @@ const routes = [
     FooterComponent,
     OrganizationCreationComponent,
     BranchComponent,
-    BranchCreationComponent
+    BranchCreationComponent,
+    WorkstationComponent
   ],
   imports: [
     BrowserModule,
