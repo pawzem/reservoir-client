@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { BranchComponent } from './branch/branch.component';
 import { BranchCreationComponent } from './branch-creation/branch-creation.component';
 import { WorkstationComponent } from './workstation/workstation.component';
+import { WorkstationCreationComponent } from './workstation-creation/workstation-creation.component';
 
 const routes = [
   { path: '',
@@ -36,7 +37,8 @@ const routes = [
     OrganizationCreationComponent,
     BranchComponent,
     BranchCreationComponent,
-    WorkstationComponent
+    WorkstationComponent,
+    WorkstationCreationComponent
   ],
   imports: [
     BrowserModule,

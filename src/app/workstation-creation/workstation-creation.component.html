@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h4 i18n class="modal-title">Add Workstation</h4>
+</div>
+<div class="modal-body">
+  <form  [formGroup]="workstationForm" (ngSubmit)="onClickSubmit(workstationForm.value)" >
+    <div class="form-group">
+      <small id="nameHelp" class="form-text text-muted">Workstation name</small>
+      <input type="text" class="form-control" id="workstationName" placeholder="Workstation name" formControlName="workstationName">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-danger" (click)="activeModal.close('Close click')">Close</button>
+</div>
+

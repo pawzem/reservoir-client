@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder} from '@angular/forms';
 import {OrganizationClientService} from '../clients/organization-client.service';
-import {Router} from '@angular/router';
 import {Branch} from '../clients/organization';
 
 @Component({

@@ -3,7 +3,7 @@ import {Workstation} from '../clients/organization';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ActivatedRoute} from '@angular/router';
 import {OrganizationClientService} from '../clients/organization-client.service';
-import {BranchCreationComponent} from '../branch-creation/branch-creation.component';
+import {WorkstationCreationComponent} from '../workstation-creation/workstation-creation.component';
 
 @Component({
   selector: 'app-workstation',
@@ -31,7 +31,7 @@ export class WorkstationComponent implements OnInit {
   }
 
   openWorkstationCreation(): void {
-    const modalRef = this.modalService.open(BranchCreationComponent);
+    const modalRef = this.modalService.open(WorkstationCreationComponent);
     modalRef.componentInstance.branchId = this.branchId;
   }
 
