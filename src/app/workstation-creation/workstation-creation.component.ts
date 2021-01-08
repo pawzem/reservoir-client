@@ -31,8 +31,6 @@ export class WorkstationCreationComponent implements OnInit {
     this.organizationClient.addWorkstation(workstation).subscribe(
       success => {
         this.activeModal.close();
-      }, error => {
-        alert('Workstation creation failed reason: ' + error.message);
       }
     );
   }

@@ -7,13 +7,14 @@ import { OrganizationComponent } from './organization/organization.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { OrganizationCreationComponent } from './organization-creation/organization-creation.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BranchComponent } from './branch/branch.component';
 import { BranchCreationComponent } from './branch-creation/branch-creation.component';
 import { WorkstationComponent } from './workstation/workstation.component';
 import { WorkstationCreationComponent } from './workstation-creation/workstation-creation.component';
+import {HttpErrorInterceptor} from "./errors/http-error-interceptor.service";
 
 const routes = [
   { path: '',
@@ -50,7 +51,13 @@ const routes = [
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpErrorInterceptor,
+    multi: true
+  },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

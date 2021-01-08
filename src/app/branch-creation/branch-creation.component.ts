@@ -36,8 +36,6 @@ export class BranchCreationComponent implements OnInit {
     this.organizationClient.addBranch(branch).subscribe(
       success => {
         this.activeModal.close();
-      }, error => {
-        alert('Branch creation failed reason: ' + error.message);
       }
     );
   }

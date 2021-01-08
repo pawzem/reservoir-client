@@ -37,9 +37,10 @@ export class OrganizationCreationComponent implements OnInit {
     this.organizationClient.addFirm(organization).subscribe(
       success => {
         this.activeModal.close();
-      }, error => {
-        alert('Organization creation failed reason: ' + error.message);
       }
+      // , error => {
+      //   alert('Organization creation failed reason: ' + error.message);
+      // }
     );
   }
 }
