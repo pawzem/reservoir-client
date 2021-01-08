@@ -3,6 +3,7 @@ import {Organization} from '../clients/organization';
 import {OrganizationClientService} from '../clients/organization-client.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {OrganizationCreationComponent} from '../organization-creation/organization-creation.component';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class OrganizationComponent implements OnInit {
   public organizations: Organization[] = [];
 
   constructor(private modalService: NgbModal,
+              private router: Router,
               private organizationClient: OrganizationClientService) { }
 
   ngOnInit(): void {
@@ -24,20 +26,13 @@ export class OrganizationComponent implements OnInit {
         });
   }
 
-  //  ngOnInit() {
-  //   this.data.loadProducts()
-  //     .subscribe(success => {
-  //       if (success) {
-  //         this.products = this.data.products;
-  //       }
-  //     });
-  // }
-//   addProduct(product: Product) {
-//     this.data.AddToOrder(product);
-//   }
-
   openOrganizationCreation(): void {
     const modalRef = this.modalService.open(OrganizationCreationComponent);
     modalRef.componentInstance.name = 'OrganizationCreation';
   }
+
+  public navigateToBranches(branchId: string): Promise<boolean>{
+    return this.router.navigate(['organizations/' + branchId + '/branches']);
+  }
+
 }

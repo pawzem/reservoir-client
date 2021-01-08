@@ -9,10 +9,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 import { OrganizationCreationComponent } from './organization-creation/organization-creation.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from '@angular/forms';
+import { BranchComponent } from './branch/branch.component';
 
 const routes = [
-  { path: '', component: OrganizationComponent },
+  { path: '',
+    component: OrganizationComponent,
+  },
+  { path: 'organizations/:companyId/branches',
+    component: BranchComponent,
+  },
 
 ];
 
@@ -22,7 +28,8 @@ const routes = [
     OrganizationComponent,
     HeaderComponent,
     FooterComponent,
-    OrganizationCreationComponent
+    OrganizationCreationComponent,
+    BranchComponent
   ],
   imports: [
     BrowserModule,
