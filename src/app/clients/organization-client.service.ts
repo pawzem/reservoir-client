@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Branch, Organization} from './organization';
 import {PartyId} from './party-id';
@@ -18,7 +18,9 @@ export class OrganizationClientService {
   }
 
   getBranches(parentId: string): Observable<Branch[]> {
-    return this.http.get<Branch[]>(environment.baseUrl + 'branch');
+    const params = new HttpParams()
+      .set('companyId', parentId);
+    return this.http.get<Branch[]>(environment.baseUrl + 'branch', {params});
   }
 
   public addBranch(branch: Branch): Observable<PartyId>  {

@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { OrganizationCreationComponent } from './organization-creation/organization-creation.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { BranchComponent } from './branch/branch.component';
+import { BranchCreationComponent } from './branch-creation/branch-creation.component';
 
 const routes = [
   { path: '',
@@ -29,7 +30,8 @@ const routes = [
     HeaderComponent,
     FooterComponent,
     OrganizationCreationComponent,
-    BranchComponent
+    BranchComponent,
+    BranchCreationComponent
   ],
   imports: [
     BrowserModule,

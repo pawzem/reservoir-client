@@ -27,8 +27,7 @@ export class OrganizationComponent implements OnInit {
   }
 
   openOrganizationCreation(): void {
-    const modalRef = this.modalService.open(OrganizationCreationComponent);
-    modalRef.componentInstance.name = 'OrganizationCreation';
+    this.modalService.open(OrganizationCreationComponent);
   }
 
   public navigateToBranches(branchId: string): Promise<boolean>{

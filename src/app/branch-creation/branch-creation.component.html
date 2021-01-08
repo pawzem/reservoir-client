@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h4 i18n class="modal-title">Add Branch</h4>
+</div>
+<div class="modal-body">
+  <form  [formGroup]="branchForm" (ngSubmit)="onClickSubmit(branchForm.value)" >
+    <div class="form-group">
+      <small id="nameHelp" class="form-text text-muted">Branch name</small>
+      <input type="text" class="form-control" id="organizationName" placeholder="Branch name" formControlName="branchName">
+
+      <small id="emailHelp" class="form-text text-muted">Contact email for branch</small>
+      <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Email"  formControlName="email">
+
+      <small id="phoneHelp" class="form-text text-muted">Contact phone number for branch</small>
+      <input type="tel" class="form-control" id="Phone" aria-describedby="phoneHelp" placeholder="Phone number"  formControlName="phone" >
+
+      <small id="webHelp" class="form-text text-muted">Branch website</small>
+      <input type="url" class="form-control" id="Web" aria-describedby="webHelp" placeholder="Website address"  formControlName="url">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-danger" (click)="activeModal.close('Close click')">Close</button>
+</div>
+

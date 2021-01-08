@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Branch} from '../clients/organization';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {OrganizationClientService} from '../clients/organization-client.service';
-import {OrganizationCreationComponent} from '../organization-creation/organization-creation.component';
 import {ActivatedRoute} from '@angular/router';
+import {BranchCreationComponent} from '../branch-creation/branch-creation.component';
 
 @Component({
   selector: 'app-branch',
@@ -13,25 +13,26 @@ import {ActivatedRoute} from '@angular/router';
 export class BranchComponent implements OnInit {
 
   public branches: Branch[] = [];
+  private companyId: string;
 
   constructor(private modalService: NgbModal,
               private route: ActivatedRoute,
               private organizationClient: OrganizationClientService) { }
 
   ngOnInit(): void {
-    const companyId = this.route.snapshot.paramMap.get('companyId');
+    this.companyId = this.route.snapshot.paramMap.get('companyId');
 
-    if (companyId){
-      this.organizationClient.getBranches(companyId)
+    if (this.companyId){
+      this.organizationClient.getBranches(this.companyId)
         .subscribe(data => {
           this.branches = data;
         });
     }
   }
 
-  openOrganizationCreation(): void {
-    const modalRef = this.modalService.open(OrganizationCreationComponent);
-    modalRef.componentInstance.name = 'OrganizationCreation';
+  openBranchCreation(): void {
+    const modalRef = this.modalService.open(BranchCreationComponent);
+    modalRef.componentInstance.companyId = this.companyId;
   }
 
 }
